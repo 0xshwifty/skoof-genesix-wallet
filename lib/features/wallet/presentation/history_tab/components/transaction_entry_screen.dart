@@ -65,33 +65,39 @@ class _TransactionEntryScreenState
     final transactionEntry = extra.transactionEntry;
     final entryType = transactionEntry.txEntryType;
 
+    String historyType;
+
     switch (entryType) {
       case sdk.CoinbaseEntry():
         entryTypeName = loc.coinbase;
         coinbase = entryType;
         icon = const Icon(Icons.square_rounded);
+        historyType = 'blocks';
       case sdk.BurnEntry():
         entryTypeName = loc.burn;
         burn = entryType;
         icon = const Icon(Icons.fireplace_rounded);
+        historyType = 'blocks';
       case sdk.IncomingEntry():
         entryTypeName = loc.incoming;
         incoming = entryType;
         icon = const Icon(Icons.arrow_downward);
+        historyType = 'txs';
       case sdk.OutgoingEntry():
         entryTypeName = loc.outgoing;
         outgoing = entryType;
         icon = const Icon(Icons.arrow_upward);
+        historyType = 'txs';
     }
 
     Uri url;
     switch (network) {
       case Network.mainnet || Network.dev:
         url = Uri.parse(
-            '${AppResources.explorerMainnetUrl}txs/${transactionEntry.hash}');
+            'https://explorer.skoof.pro/#/' + historyType + '/${transactionEntry.hash}');
       case Network.testnet:
         url = Uri.parse(
-            '${AppResources.explorerTestnetUrl}txs/${transactionEntry.hash}');
+            'https://testnet-explorer.skoof.pro/#/' + historyType + '/${transactionEntry.hash}');
     }
 
     var displayTopoheight = NumberFormat().format(transactionEntry.topoHeight);
@@ -153,7 +159,7 @@ class _TransactionEntryScreenState
                   Text(loc.amount, style: context.headlineSmall),
                   const SizedBox(height: Spaces.small),
                   SelectableText(
-                    '+${formatXelis(coinbase!.reward)} XEL',
+                    '+${formatXelis(coinbase!.reward)} SKF',
                     // hmm coinbase could return other asset than XELIS
                     style: context.bodyLarge!
                         .copyWith(color: context.moreColors.mutedColor),
@@ -170,7 +176,7 @@ class _TransactionEntryScreenState
                   Text(loc.burn, style: context.headlineSmall),
                   const SizedBox(height: Spaces.small),
                   SelectableText(
-                    '-${formatXelis(burn!.amount)} XEL',
+                    '-${formatXelis(burn!.amount)} SKF',
                     style: context.bodyLarge!
                         .copyWith(color: context.moreColors.mutedColor),
                   ),
@@ -183,7 +189,7 @@ class _TransactionEntryScreenState
               Text(loc.fee, style: context.headlineSmall),
               const SizedBox(height: Spaces.small),
               SelectableText(
-                '${formatXelis(outgoing!.fee)} XEL',
+                '${formatXelis(outgoing!.fee)} SKF',
                 style: context.bodyLarge!
                     .copyWith(color: context.moreColors.mutedColor),
               ),
@@ -244,7 +250,7 @@ class _TransactionEntryScreenState
                                               style: context.labelLarge),
                                           SelectableText(
                                               transfer.asset == sdk.xelisAsset
-                                                  ? 'XELIS'
+                                                  ? 'SKOOF'
                                                   : transfer.asset),
                                         ],
                                       ),
@@ -260,7 +266,7 @@ class _TransactionEntryScreenState
                                               style: context.labelLarge),
                                           SelectableText(transfer.asset ==
                                                   sdk.xelisAsset
-                                              ? '-${formatXelis(transfer.amount)} XEL'
+                                              ? '-${formatXelis(transfer.amount)} SKF'
                                               : '${transfer.amount}'),
                                         ],
                                       ),
@@ -345,7 +351,7 @@ class _TransactionEntryScreenState
                                           style: context.labelLarge),
                                       SelectableText(
                                           transfer.asset == sdk.xelisAsset
-                                              ? 'XELIS'
+                                              ? 'SKOOF'
                                               : transfer.asset),
                                     ],
                                   ),
@@ -361,7 +367,7 @@ class _TransactionEntryScreenState
                                           style: context.labelLarge),
                                       SelectableText(transfer.asset ==
                                               sdk.xelisAsset
-                                          ? '+${formatXelis(transfer.amount)} XEL'
+                                          ? '+${formatXelis(transfer.amount)} SKF'
                                           : '${transfer.amount}'),
                                     ],
                                   ),

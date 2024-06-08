@@ -7,7 +7,6 @@ import 'package:genesix/features/settings/domain/theme_translate_name.dart';
 import 'package:genesix/shared/theme/extensions.dart';
 
 const List<AppTheme> themes = <AppTheme>[
-  AppTheme.xelis,
   AppTheme.dark,
   AppTheme.light,
 ];

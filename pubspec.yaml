@@ -1,5 +1,6 @@
+# do not change
 name: genesix
-description: Multiplatform mobile wallet for the XELIS network.
+description: Multiplatform mobile wallet for the SKOOF network.
 publish_to: 'none'
 
 version: 0.0.4
@@ -47,7 +48,7 @@ dependencies:
   url_launcher: ^6.2.6
 #  workmanager: ^0.5.2
 
-  flutter_rust_bridge: 2.0.0-dev.36
+  flutter_rust_bridge: 2.0.0-dev.37
   rust_builder:
     path: rust_builder
 
@@ -76,10 +77,10 @@ flutter:
 
   assets:
 #    - assets/banners/svg/
-#    - assets/icons/png/
+    - assets/icons/png/
     - assets/bg_dots.png
 
 msix_config:
-  display_name: Genesix Wallet
-  publisher_display_name: XELIS
+  display_name: SKOOF Genesix Wallet
+  publisher_display_name: SKOOF
   logo_path: assets/icons/png/circle/green_background_black_logo.png

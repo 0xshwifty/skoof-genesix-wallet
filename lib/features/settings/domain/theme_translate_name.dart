@@ -7,7 +7,5 @@ String translateThemeName(AppLocalizations loc, AppTheme theme) {
       return loc.dark;
     case AppTheme.light:
       return loc.light;
-    case AppTheme.xelis:
-      return 'XELIS';
   }
 }

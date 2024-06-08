@@ -9,7 +9,6 @@ import 'package:genesix/features/settings/domain/settings_state.dart';
 import 'package:genesix/shared/resources/app_resources.dart';
 import 'package:genesix/shared/theme/dark.dart';
 import 'package:genesix/shared/theme/light.dart';
-import 'package:genesix/shared/theme/xelis.dart';
 import 'package:genesix/shared/widgets/app_providers_initializer.dart';
 import 'package:genesix/shared/widgets/components/global_bottom_loader_widget.dart';
 import 'package:genesix/shared/widgets/components/network_bar_widget.dart';
@@ -26,7 +25,6 @@ class _XelisWalletAppState extends ConsumerState<XelisWalletApp>
     with WindowListener {
   final _lightTheme = lightTheme();
   final _darkTheme = darkTheme();
-  final _xelisTheme = xelisTheme();
 
   @override
   void initState() {
@@ -48,8 +46,6 @@ class _XelisWalletAppState extends ConsumerState<XelisWalletApp>
     // using kDebugMode and call func every render to hot reload the theme
     ThemeData themeData;
     switch (appTheme) {
-      case AppTheme.xelis:
-        themeData = kDebugMode ? xelisTheme() : _xelisTheme;
       case AppTheme.dark:
         themeData = kDebugMode ? darkTheme() : _darkTheme;
       case AppTheme.light:
