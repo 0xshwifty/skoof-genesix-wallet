@@ -1,4 +1,4 @@
-package io.xelis.app.genesix
+package io.skoof.app.genesix
 
 import io.flutter.embedding.android.FlutterActivity
 
