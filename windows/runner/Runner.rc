@@ -89,7 +89,7 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "io.xelis.app" "\0"
+            VALUE "CompanyName", "skoofgenesix.app" "\0"
             VALUE "FileDescription", "Genesix" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "genesix" "\0"
