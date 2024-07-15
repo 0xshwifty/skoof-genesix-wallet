@@ -13,7 +13,6 @@ part 'settings_state.g.dart';
 enum AppTheme {
   light,
   dark,
-  xelis,
 }
 
 @freezed
@@ -23,7 +22,7 @@ class SettingsState with _$SettingsState {
     @JsonKey(name: 'hide_extra_data') @Default(false) bool hideExtraData,
     @JsonKey(name: 'hide_zero_transfer') @Default(false) bool hideZeroTransfer,
     @JsonKey(name: 'network') @Default(Network.mainnet) Network network,
-    @JsonKey(name: 'theme') @Default(AppTheme.xelis) AppTheme theme,
+    @JsonKey(name: 'theme') @Default(AppTheme.dark) AppTheme theme,
     @LocaleJsonConverter() required Locale locale,
   }) = _SettingsState;
 

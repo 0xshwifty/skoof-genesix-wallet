@@ -2896,7 +2896,7 @@ dependencies = [
 [[package]]
 name = "xelis_common"
 version = "1.13.1"
-source = "git+https://github.com/0xshwifty/skoof-blockchain2?branch=master#81f834c133dad1454b0d4e450501b71846da3c8d"
+source = "git+https://github.com/0xshwifty/skoof-blockchain2?branch=master#2c22420a4a0a8156095876f4b0c7e0daf5bb8ad4"
 dependencies = [
  "actix-rt",
  "actix-web",
@@ -2936,7 +2936,7 @@ dependencies = [
 [[package]]
 name = "xelis_wallet"
 version = "1.13.1"
-source = "git+https://github.com/0xshwifty/skoof-blockchain2?branch=master#81f834c133dad1454b0d4e450501b71846da3c8d"
+source = "git+https://github.com/0xshwifty/skoof-blockchain2?branch=master#2c22420a4a0a8156095876f4b0c7e0daf5bb8ad4"
 dependencies = [
  "actix",
  "actix-web",
